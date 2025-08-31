@@ -48,7 +48,6 @@ ios/
 android/
 
 # Build artifacts
-apk-*
 *-build/
 debug-apk/
 final-apk/
