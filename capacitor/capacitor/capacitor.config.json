@@ -1,0 +1,10 @@
+{
+  "appId": "com.aiphonemaster.app",
+  "appName": "AIPhoneMaster",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

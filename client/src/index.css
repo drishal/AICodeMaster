@@ -1,0 +1,721 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(142, 71%, 45%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(14, 100%, 57%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Custom theme colors for mobile dev assistant */
+  --dark: hsl(220, 13%, 6%);
+  --surface: hsl(220, 13%, 9%);
+  --surface-variant: hsl(220, 13%, 13%);
+  --text-primary: hsl(0, 0%, 94%);
+  --text-secondary: hsl(240, 5%, 58%);
+  --success: hsl(142, 71%, 45%);
+  --warning: hsl(45, 93%, 47%);
+  --error: hsl(0, 72%, 51%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(142, 71%, 45%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(14, 100%, 57%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--dark);
+    color: var(--text-primary);
+  }
+}
+
+@layer utilities {
+  .bg-dark {
+    background-color: var(--dark);
+  }
+  
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .bg-surface-variant {
+    background-color: var(--surface-variant);
+  }
+  
+  .text-text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .border-surface-variant {
+    border-color: var(--surface-variant);
+  }
+  
+  .text-success {
+    color: var(--success);
+  }
+  
+  .bg-success {
+    background-color: var(--success);
+  }
+  
+  .text-warning {
+    color: var(--warning);
+  }
+  
+  .bg-warning {
+    background-color: var(--warning);
+  }
+  
+  .text-error {
+    color: var(--error);
+  }
+  
+  .bg-error {
+    background-color: var(--error);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Enhanced module styles for better layout and functionality */
+  .module-enhanced {
+    @apply max-w-full overflow-hidden;
+    min-height: 350px;
+    max-height: calc(100vh - 180px);
+    width: 100%;
+  }
+  
+  /* Mobile module optimization */
+  @media (max-width: 768px) {
+    .module-enhanced {
+      min-height: 250px;
+      max-height: calc(100vh - 140px);
+      margin-bottom: 8px;
+    }
+  }
+  
+  .module-enhanced .card-description {
+    @apply text-sm text-muted-foreground leading-relaxed mb-4 px-1;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  .module-enhanced .feature-list {
+    @apply flex flex-wrap gap-2 mb-4;
+  }
+  
+  .module-enhanced .feature-tag {
+    @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium;
+    @apply bg-blue-500/10 text-blue-400 border border-blue-500/20;
+    @apply hover:bg-blue-500/20 transition-colors cursor-default;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  /* Tab content optimization */
+  .tab-content-container {
+    @apply max-h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide;
+    @apply px-2 pb-4;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Mobile-specific tab content */
+  @media (max-width: 768px) {
+    .tab-content-container {
+      max-height: calc(100vh - 140px);
+      padding: 6px;
+      overflow-x: hidden;
+    }
+  }
+  
+  /* Form and input optimizations */
+  .form-section {
+    @apply space-y-4 p-4 rounded-lg border bg-card/50;
+  }
+  
+  .input-group {
+    @apply space-y-2;
+  }
+  
+  .input-group label {
+    @apply text-sm font-medium text-foreground;
+  }
+  
+  /* Button enhancements */
+  .btn-enhanced {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+    @apply shadow-sm hover:shadow-md;
+  }
+  
+  /* Card layout optimizations */
+  .card-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .card-grid-2 {
+    @apply grid gap-4 grid-cols-1 lg:grid-cols-2;
+  }
+  
+  .card-grid-3 {
+    @apply grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .card-grid-4 {
+    @apply grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+  }
+  
+  /* Progress and status indicators */
+  .status-indicator {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-success {
+    @apply bg-green-500/10 text-green-400 border border-green-500/20;
+  }
+  
+  .status-warning {
+    @apply bg-yellow-500/10 text-yellow-400 border border-yellow-500/20;
+  }
+  
+  .status-error {
+    @apply bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+  
+  .status-info {
+    @apply bg-blue-500/10 text-blue-400 border border-blue-500/20;
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Responsive text utilities */
+  .text-responsive {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+  
+  .text-responsive-lg {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  /* Interactive elements */
+  .interactive-card {
+    @apply transition-all duration-200 hover:shadow-lg hover:scale-[1.02];
+    @apply cursor-pointer border hover:border-blue-500/50;
+  }
+  
+  .interactive-card:active {
+    @apply scale-[0.98];
+  }
+  
+  /* Overlay and modal optimizations */
+  .overlay-content {
+    @apply max-h-[80vh] overflow-y-auto scrollbar-hide;
+  }
+  
+  /* Mobile-first responsive utilities */
+  @media (max-width: 768px) {
+    .module-enhanced {
+      max-height: calc(100vh - 160px);
+      min-height: 300px;
+    }
+    
+    .tab-content-container {
+      max-height: calc(100vh - 180px);
+      padding: 8px 4px;
+    }
+    
+    .card-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    /* Mobile card optimizations */
+    .card-grid > * {
+      max-height: 280px;
+      overflow-y: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* Card content mobile optimization */
+    .card > .card-content {
+      padding: 8px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+    
+    /* Ensure all cards fit in mobile */
+    [data-radix-tabs-content] > div > * {
+      max-height: 280px !important;
+      overflow-y: auto !important;
+      margin-bottom: 8px !important;
+    }
+    
+    /* Global mobile card constraints */
+    [data-radix-tabs-content] .card {
+      max-height: 280px !important;
+      overflow: hidden !important;
+    }
+    
+    [data-radix-tabs-content] .card-content {
+      max-height: 200px !important;
+      overflow-y: auto !important;
+      padding: 8px 12px !important;
+    }
+    
+    [data-radix-tabs-content] .card-header {
+      padding: 8px 12px 4px !important;
+    }
+    
+    /* Mobile grid system fixes */
+    [data-radix-tabs-content] .grid > * {
+      max-height: 280px !important;
+      overflow: hidden !important;
+    }
+    
+    /* Tab content wrapper */
+    .tab-content-container {
+      max-height: calc(100vh - 120px) !important;
+      overflow-y: auto !important;
+      padding: 6px !important;
+    }
+    
+    /* Increase card heights for better visibility */
+    [data-radix-tabs-content] .card {
+      max-height: 350px !important;
+      min-height: 300px !important;
+      overflow: hidden !important;
+    }
+    
+    /* Larger content areas for better readability */
+    [data-radix-tabs-content] .card-content {
+      max-height: 280px !important;
+      overflow-y: auto !important;
+      padding: 10px 14px !important;
+    }
+    
+    /* Fix overlapping issues and mobile layout problems */
+    
+    /* Make tabs horizontal on mobile for remote control */
+    .remote-control-horizontal [role="tablist"] {
+      display: flex !important;
+      flex-direction: row !important;
+      width: 100% !important;
+      overflow-x: auto !important;
+    }
+    
+    .remote-control-horizontal [role="tab"] {
+      flex: 1 !important;
+      min-width: 80px !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+    
+    /* Bigger tabs for better visibility */
+    .bigger-tabs {
+      min-height: 400px !important;
+    }
+    
+    .bigger-tabs .card {
+      min-height: 380px !important;
+      max-height: 450px !important;
+    }
+    
+    .bigger-tabs .card-content {
+      max-height: 380px !important;
+      padding: 12px 16px !important;
+    }
+    
+    /* Fix command console prompt width */
+    .console-prompt {
+      width: 100% !important;
+      min-height: 120px !important;
+    }
+    
+    /* Fix CRM performance tabs overlapping */
+    .crm-tabs [role="tablist"] {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 4px !important;
+    }
+    
+    .crm-tabs [role="tab"] {
+      flex: 1 1 30% !important;
+      min-width: 80px !important;
+      font-size: 0.8rem !important;
+    }
+    
+    /* Fix mobile control overlapping */
+    .mobile-control-tabs [role="tablist"] {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      gap: 2px !important;
+    }
+    
+    .mobile-control-tabs [role="tab"] {
+      flex: 1 1 25% !important;
+      min-width: 60px !important;
+      font-size: 0.75rem !important;
+      padding: 6px 8px !important;
+    }
+    
+    /* Fix trend scraper tabs overlapping - make them longer and non-scrollable */
+    .trend-scraper-tabs {
+      min-height: 500px !important;
+    }
+    
+    .trend-scraper-tabs .card {
+      min-height: 480px !important;
+      max-height: none !important;
+    }
+    
+    .trend-scraper-tabs .card-content {
+      max-height: none !important;
+      overflow: visible !important;
+      padding: 16px !important;
+    }
+    
+    .trend-scraper-tabs [role="tablist"] {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      gap: 6px !important;
+      flex-wrap: wrap !important;
+    }
+    
+    .trend-scraper-tabs [role="tab"] {
+      flex: 1 1 18% !important;
+      min-width: 90px !important;
+      font-size: 0.75rem !important;
+      padding: 8px 6px !important;
+      text-align: center !important;
+    }
+    
+    /* Fix voice assistant going out */
+    .voice-assistant-container {
+      max-width: 100% !important;
+      overflow: hidden !important;
+    }
+    
+    .voice-assistant-container .card-header {
+      padding: 8px 12px !important;
+    }
+    
+    .voice-assistant-container .card-title {
+      font-size: 1rem !important;
+      flex-wrap: wrap !important;
+      gap: 4px !important;
+    }
+    
+    /* Universal scrollable card fix for all modules */
+    .scrollable-card {
+      max-height: 75vh !important;
+      overflow-y: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      border-radius: 12px !important;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .scrollable-card .card-content {
+      flex: 1 !important;
+      overflow-y: auto !important;
+      padding-bottom: 16px !important;
+      max-height: calc(75vh - 120px) !important;      
+      scrollbar-width: thin !important;
+      scrollbar-color: var(--border) transparent !important;
+    }
+    
+    .scrollable-card .card-header {
+      flex-shrink: 0 !important;
+      position: sticky !important;
+      top: 0 !important;
+      background: inherit !important;
+      z-index: 10 !important;
+      border-bottom: 1px solid var(--border) !important;
+      border-radius: 12px 12px 0 0 !important;
+    }
+    
+    /* Specific fixes for social media modules */
+    .social-module {
+      max-height: 75vh !important;
+      overflow-y: auto !important;
+    }
+    
+    .social-module .card-content {
+      max-height: calc(75vh - 100px) !important;
+      overflow-y: auto !important;
+      padding-bottom: 20px !important;
+    }
+    
+    /* Ensure buttons are always visible */
+    .action-buttons {
+      position: sticky !important;
+      bottom: 0 !important;
+      background: inherit !important;
+      padding-top: 12px !important;
+      z-index: 5 !important;
+      border-top: 1px solid var(--border) !important;
+      margin-top: 12px !important;
+    }
+    
+    /* Tab content scrolling fixes */
+    .tab-scrollable {
+      max-height: 65vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      padding-right: 8px !important;
+    }
+    
+    .tab-scrollable::-webkit-scrollbar {
+      width: 6px !important;
+    }
+    
+    .tab-scrollable::-webkit-scrollbar-track {
+      background: transparent !important;
+    }
+    
+    .tab-scrollable::-webkit-scrollbar-thumb {
+      background: var(--border) !important;
+      border-radius: 3px !important;
+    }
+    
+    .tab-scrollable::-webkit-scrollbar-thumb:hover {
+      background: var(--border) !important;
+    }
+    
+    /* Fix internal tabs container */
+    .internal-tabs-container {
+      max-height: 68vh !important;
+      overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    .internal-tabs-container .tabs-list {
+      flex-shrink: 0 !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 10 !important;
+      background: inherit !important;
+    }
+    
+    .internal-tabs-container .tabs-content {
+      flex: 1 !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      max-height: calc(68vh - 60px) !important;
+    }
+    
+    /* Mobile form optimizations */
+    .form-section {
+      padding: 12px;
+      space-y: 12px;
+    }
+    
+    /* Mobile button optimizations */
+    .btn-enhanced {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+    
+    /* Mobile text optimizations */
+    .card-description {
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    
+    .feature-list {
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    
+    .feature-tag {
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+    
+    /* Enhanced mobile tab optimization */
+    .tab-content-mobile {
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+      padding: 6px 4px;
+    }
+    
+    /* Mobile component cards */
+    .mobile-card {
+      max-height: 280px;
+      overflow-y: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* Mobile grid optimization */
+    .mobile-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    
+    /* Mobile input and select optimizations */
+    .mobile-input {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+    
+    .mobile-select {
+      font-size: 14px;
+    }
+    
+    /* Force all mobile cards to fit viewport */
+    .card {
+      max-height: 280px !important;
+      overflow-y: auto !important;
+    }
+    
+    /* Mobile header optimization */
+    .card-header {
+      padding: 8px 12px !important;
+    }
+    
+    /* Mobile content optimization */
+    .card-content {
+      padding: 8px 12px !important;
+      max-height: 220px !important;
+      overflow-y: auto !important;
+    }
+  }
+
+  /* Prevent text overlap and improve readability */
+  .card-content {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  /* Fix tab content spacing */
+  .tab-content {
+    padding-top: 1rem;
+    min-height: calc(100vh - 180px);
+  }
+
+  /* Improve grid layouts */
+  .feature-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Module enhancement styles */
+  .module-enhanced {
+    border: 2px solid hsl(var(--primary) / 0.1);
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-variant) 100%);
+  }
+
+  .feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .feature-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-radius: 0.375rem;
+    white-space: nowrap;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

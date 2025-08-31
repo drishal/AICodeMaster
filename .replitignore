@@ -1,0 +1,38 @@
+# Node.js cache directories
+node_modules/
+.cache/
+.npm/
+.yarn/
+.pnpm-store/
+
+# Replit cache directories
+/home/runner/workspace/downloads/.cache/
+.cache/replit/
+
+# Build directories
+build/
+android/build/
+android-build/
+apk-package/
+apk-ready/
+debug-apk/
+final-apk/
+final-repo/
+s24-ultra-build/
+mo-build/
+downloads/
+github-upload/
+
+# Temporary and generated files
+uploads/
+*.log
+*.tmp
+.DS_Store
+*.lock
+
+# Environment and config files
+.env
+.env.local
+cookies.txt
+*.keystore
+local.properties
