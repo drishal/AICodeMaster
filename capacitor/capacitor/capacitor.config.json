@@ -2,6 +2,11 @@
   "appId": "com.aiphonemaster.app",
   "appName": "AIPhoneMaster",
   "webDir": "dist",
+  "server": {
+    "url": "http://192.168.0.36:5000",
+    "cleartext": true,
+    "allowNavigation": ["192.168.0.36"]
+  },
   "plugins": {
     "SplashScreen": {
       "launchAutoHide": false

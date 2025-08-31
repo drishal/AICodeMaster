@@ -1,0 +1,77 @@
+{
+  "id": "reel_1756646939321_y32z57842",
+  "title": "Test reel",
+  "description": "AI-generated reel about Mobile development ",
+  "script": "Are you ready to transform your ideas into reality right from your smartphone? Let's dive into the future of mobile development!",
+  "style": "modern",
+  "duration": 20,
+  "aspectRatio": "9:16",
+  "voiceSettings": {
+    "language": "en",
+    "speed": 1,
+    "pitch": 0,
+    "voice": "neutral",
+    "provider": "gTTS",
+    "emotion": "neutral"
+  },
+  "captionSettings": {
+    "enabled": true,
+    "style": "minimal",
+    "position": "bottom",
+    "fontSize": 48,
+    "color": "white"
+  },
+  "musicSettings": {
+    "enabled": true,
+    "genre": "ambient",
+    "volume": 0.3
+  },
+  "transitions": [
+    "fadein",
+    "fadeout"
+  ],
+  "effects": [
+    "zoom"
+  ],
+  "createdAt": "2025-08-31T13:29:04.184Z",
+  "status": "draft",
+  "progress": 0,
+  "scenes": [
+    {
+      "timestamp": "0:00-0:05",
+      "text": "Tech savvy intro with quick app transitions",
+      "visual_description": "Fast-moving shots of various mobile apps in action: social media, games, and productivity tools.",
+      "caption_text": "Transform Ideas into Reality",
+      "transition": "flash cut transitions"
+    },
+    {
+      "timestamp": "0:05-0:10",
+      "text": "Amazing features of mobile apps",
+      "visual_description": "Close-ups of a mobile screen as fingers swipe through UI animations and impressive app features.",
+      "caption_text": "Sleek Designs, Infinite Possibilities",
+      "transition": "slide-in effects"
+    },
+    {
+      "timestamp": "0:10-0:15",
+      "text": "Developer's perspective",
+      "visual_description": "Over-the-shoulder shot of a developer coding on a laptop next to a phone displaying a preview of an app.",
+      "caption_text": "Code & Create",
+      "transition": "crossfade"
+    },
+    {
+      "timestamp": "0:15-0:20",
+      "text": "Call to action",
+      "visual_description": "A hand beckoning the viewer towards a digital world inside the phone screen.",
+      "caption_text": "Join the Movement! #MobileDev",
+      "transition": "zoom in"
+    }
+  ],
+  "hook": "Are you ready to transform your ideas into reality right from your smartphone?",
+  "call_to_action": "Start your mobile development journey today!",
+  "hashtags": [
+    "#MobileDevelopment",
+    "#AppCreator",
+    "#TechInnovation"
+  ],
+  "music_mood": "upbeat and futuristic"
+}
