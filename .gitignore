@@ -63,3 +63,5 @@ mo-s24-*.tar.gz.devenv
 #nix env
 .direnv/
 .devenv/
+
+uploads/
